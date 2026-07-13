@@ -36,11 +36,9 @@ echo 'src-git mihomo https://github.com/morytyann/OpenWrt-Mihomo.git;main' >> fe
 echo "[INFO] 添加 SSR-Plus 源..."
 echo 'src-git ssrplus https://github.com/fw876/helloworld.git;main' >> feeds.conf.default
 
-# 8. 添加 CloudflareSpeedtest 源
-echo "[INFO] 添加 CloudflareSpeedtest 源..."
-echo 'src-git cloudflarespeedtest https://github.com/immortalwrt/luci-app-cloudflarespeedtest.git;main' >> feeds.conf.default
+# 8. CloudflareSpeedtest 通常已包含在 ImmortalWrt 自带源中，无需额外引入
+# echo "[INFO] 跳过 CloudflareSpeedtest 源（已包含在 ImmortalWrt 中）"
 
-# 9. 显示当前已添加的所有源
 echo ""
 echo "=== 已配置的自定义源 ==="
 grep -E '^src-git' feeds.conf.default | tail -n +1 || echo "[WARN] 未找到任何 src-git 源"
